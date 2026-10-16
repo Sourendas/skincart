@@ -1,0 +1,1 @@
+{ "name": "skincart", "version": "0.1.0", "private": true, "license": "MIT", "scripts": { "dev": "node dev.js", "test": "node --test test/" }, "engines": { "node": ">=18" } }
