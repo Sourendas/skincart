@@ -15,7 +15,7 @@
 <label>Routine budget: $<input type="number" id="budget" value="60" min="20" max="200"></label></section>
 <button id="go" disabled>Analyze skin &amp; check cart</button><div id="status" role="status"></div>
 <section id="out" hidden>
- <div class="card"><h2>Skin report <small id="overall"></small></h2><div id="bars"></div></div>
+ <div class="card"><h2>Skin report <small id="overall"></small></h2><div id="overlay" hidden><div class="stack"><img id="base" alt="analyzed photo"><img id="mask" alt=""></div><small id="masklabel">Click a bar to see YouCam's detection overlay.</small></div><div id="bars"></div></div>
  <div class="card"><h2>Cart check</h2><div id="cartout"></div><p id="saved"></p></div>
  <div class="card"><h2>Your routine</h2><div class="cols"><div><h3>☀ Morning</h3><ul id="am"></ul></div><div><h3>🌙 Evening</h3><ul id="pm"></ul></div></div><p id="unc" class="hint"></p></div>
 </section></main>

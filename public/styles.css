@@ -12,3 +12,4 @@ button{background:var(--pink);color:#fff;border:0;padding:14px 22px;border-radiu
 .keep{background:var(--ok)}.skip{background:var(--warn)}.conflict{background:var(--bad)}small{font-weight:400;color:#6b6070}
 #cart label{display:flex;gap:8px;padding:3px 0}li small{display:block}footer{text-align:center;color:#887d8c;font-size:.8rem;padding:20px}
 button.alt{background:#fff;color:var(--pink);border:2px solid var(--pink);width:auto;padding:8px 14px;font-size:.9rem;margin-top:10px}
+.stack{position:relative;width:220px;float:right;margin:0 0 8px 12px}.stack img{width:100%;border-radius:10px;display:block}.stack #mask{position:absolute;left:0;top:0}#overlay small{display:block;clear:right;width:220px;float:right;font-size:.75rem}

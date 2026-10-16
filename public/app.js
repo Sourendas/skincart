@@ -23,11 +23,14 @@ $('#go').onclick = async () => {
 };
 function render(d) {
   if (d.mock) { $('#banner').hidden = false; $('#banner').textContent = 'MOCK MODE: these scores are placeholder data, not real YouCam output.'; }
-  $('#out').hidden = false; $('#overall').textContent = d.overall != null ? `overall ${Math.round(d.overall)}/100 (higher = healthier)` : '';
-  $('#bars').innerHTML = Object.entries(d.scores).sort((a, b) => a[1].ui - b[1].ui).map(([k, v]) => `<div class="row"><label>${LABEL[k] || k}</label><div class="bar"><i style="width:${v.ui}%;background:${color(v.ui)}"></i></div><b>${v.ui}</b></div>`).join('');
+  $('#out').hidden = false; $('#overall').textContent = d.overall != null ? `overall ${Math.round(d.overall)}/100 (higher = healthier)${d.skinAge ? ' · skin age ' + Math.round(d.skinAge) : ''}` : '';
+  $('#overlay').hidden = !d.baseImage; if (d.baseImage) { $('#base').src = d.baseImage; $('#mask').src = ''; }
+  $('#bars').innerHTML = Object.entries(d.scores).sort((a, b) => a[1].ui - b[1].ui).map(([k, v]) => `<div class="row" data-mask="${v.mask || ''}" style="cursor:pointer"><label>${LABEL[k] || k}</label><div class="bar"><i style="width:${v.ui}%;background:${color(v.ui)}"></i></div><b>${v.ui}</b></div>`).join('');
   $('#cartout').innerHTML = d.cart ? d.cart.items.map((i) => `<div class="item"><div><b>${i.name}</b> · $${i.price}<br><small>${i.reason}</small></div><span class="tag ${i.verdict}">${i.verdict.toUpperCase()}</span></div>`).join('') : '';
   $('#saved').textContent = d.cart && d.cart.saved ? `Skipping or re-timing flagged items saves $${d.cart.saved}.` : '';
   const li = (p) => `<li>${p.name} <small>${p.why}</small></li>`;
   $('#am').innerHTML = d.routine.am.map(li).join(''); $('#pm').innerHTML = d.routine.pm.map(li).join('');
   $('#unc').textContent = d.routine.uncovered.length ? 'Not covered by the catalog: ' + d.routine.uncovered.map((n) => n.label).join(', ') + ' (consider a dermatologist).' : `Routine total $${d.routine.spent}.`;
 }
+
+document.addEventListener('click', (e) => { const r = e.target.closest('.row[data-mask]'); if (r && r.dataset.mask) { $('#mask').src = r.dataset.mask; $('#masklabel').textContent = r.querySelector('label').textContent + ' detection overlay (from YouCam)'; } });
