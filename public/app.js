@@ -5,6 +5,8 @@ fetch('/api/catalog').then((r) => r.json()).then(({ catalog }) => {
 });
 const ready = () => { $('#go').disabled = !($('#consent').checked && (imageData || $('#url').value.startsWith('https://')) || $('#mockok')?.value); };
 $('#file').onchange = (e) => { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { imageData = r.result; $('#preview').src = r.result; $('#preview').hidden = false; ready(); }; r.readAsDataURL(f); };
+const SAMPLE = 'https://upload.wikimedia.org/wikipedia/commons/1/1c/This_Person_Does_Not_Exist_example.jpg';
+$('#sample').onclick = () => { imageData = null; $('#url').value = SAMPLE; $('#preview').src = SAMPLE; $('#preview').hidden = false; $('#consent').checked = true; ready(); };
 $('#url').oninput = ready; $('#consent').onchange = ready;
 const color = (v) => (v >= 75 ? 'var(--ok)' : v >= 60 ? 'var(--warn)' : 'var(--bad)');
 const LABEL = { acne: 'Acne', moisture: 'Hydration', oiliness: 'Oil control', pore: 'Pores', redness: 'Redness', texture: 'Texture', wrinkle: 'Fine lines', dark_circle_v2: 'Dark circles', radiance: 'Radiance', firmness: 'Firmness' };

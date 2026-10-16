@@ -7,16 +7,17 @@
 <p class="hint">Use a well-lit, front-facing photo (face wider than 60% of the frame, min 480px short side). Photos are sent to the YouCam API for analysis only and are not stored by this app.</p>
 <input type="file" id="file" accept="image/jpeg,image/png"> <span class="or">or</span>
 <input type="url" id="url" placeholder="https://… public image URL">
+<div><button type="button" id="sample" class="alt">Use license-free sample (synthetic face, public domain)</button></div>
 <img id="preview" alt="" hidden>
 <label class="chk"><input type="checkbox" id="consent"> I have the right to use this photo (my own, or a license-free sample).</label>
 </section>
 <section class="card" id="step2"><h2>2 · What's in your cart?</h2><div id="cart"></div>
 <label>Routine budget: $<input type="number" id="budget" value="60" min="20" max="200"></label></section>
-<button id="go" disabled>Analyze skin & check cart</button><div id="status" role="status"></div>
+<button id="go" disabled>Analyze skin &amp; check cart</button><div id="status" role="status"></div>
 <section id="out" hidden>
  <div class="card"><h2>Skin report <small id="overall"></small></h2><div id="bars"></div></div>
  <div class="card"><h2>Cart check</h2><div id="cartout"></div><p id="saved"></p></div>
  <div class="card"><h2>Your routine</h2><div class="cols"><div><h3>☀ Morning</h3><ul id="am"></ul></div><div><h3>🌙 Evening</h3><ul id="pm"></ul></div></div><p id="unc" class="hint"></p></div>
 </section></main>
-<footer>Cosmetic guidance only, not medical advice. Catalog is fictional and generic. Built for the YouCam API Skin AI & eCommerce VTO Hackathon.</footer>
+<footer>Cosmetic guidance only, not medical advice. Catalog is fictional and generic. Built for the YouCam API Skin AI &amp; eCommerce VTO Hackathon.</footer>
 <script src="app.js"></script></body></html>

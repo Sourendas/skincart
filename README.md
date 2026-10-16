@@ -19,3 +19,9 @@ Deploy free on Vercel: import the repo, set env `YOUCAM_API_KEY`. `api/` functio
 
 ## Notes
 Photos go only to the YouCam API for analysis; nothing is stored. Catalog is fictional and generic. Cosmetic guidance, not medical advice. MIT license.
+
+## Sample image
+The built-in sample is `File:This Person Does Not Exist example.jpg` on Wikimedia Commons: a StyleGAN2-generated, non-existent person, marked Public domain. It is referenced by URL (not stored in this repo).
+
+## Troubleshooting
+`402 CreditInsufficiency`: the YouCam account has no API units; redeem the hackathon code under Account > Redeem Code in the API console.
