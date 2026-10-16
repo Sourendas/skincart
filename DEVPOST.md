@@ -1,4 +1,4 @@
-# DEVPOST DRAFT — SkinCart (do not submit until live-API test + video are done)
+# DEVPOST DRAFT — SkinCart (live-API verified 2026-10-16; hosted URL still pending, see Links)
 
 **Tagline:** Check your skin before you check out.
 
@@ -38,5 +38,6 @@ New project, built entirely after the Submission Period opened (Sep 29, 2026).
 Node.js, Vercel, YouCam API (Skin Analysis), HTML/CSS/JS.
 
 ## Links
-Repo: https://github.com/Sourendas/skincart · Live demo: <TBD after deploy> · Video: <TBD YouTube> · Screenshots: screenshots/ (current set uses MOCK data and shows the MOCK banner; REPLACE with live-API screenshots before submitting).
+Repo: https://github.com/Sourendas/skincart (public, MIT) · Live demo URL: **PENDING** (free Vercel deploy blocked by connector 403; run locally with `node dev.js` + YOUCAM_API_KEY, instructions in README; alternative: Souren imports the repo at vercel.com/new and sets YOUCAM_API_KEY) · Video: local file demo/skincart_demo_voice.mp4 (2:09, voiced), upload to YouTube then paste link · Screenshots: screenshots/ (live YouCam run, no mock banner; PNGs are local, upload them to Devpost directly).
+Test image used: public-domain StyleGAN2 synthetic face (Wikimedia Commons, "This Person Does Not Exist example.jpg"); no real person's photo.
 Social bonus (optional, +500 units): post video tagging @YouCam API with "Received API credits for sharing".
